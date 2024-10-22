@@ -56,6 +56,18 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>docker.io/yuva0606/testapp/user:latest</name>
+						<publish>true</publish>
+					</image>
+					<docker>
+						<publicRegistry>
+							<username>yuva0606</username>
+							<password>${env.DOCKER_PWD}</password>
+						</publicRegistry>
+					</docker>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
